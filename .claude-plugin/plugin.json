@@ -1,8 +1,0 @@
-{
-  "name": "changekit",
-  "description": "Change packages for Claude Code. This manifest exists so the eval suite can run against the skill; it is not how changekit is meant to be used. Copy skills/changekit into your own repository instead.",
-  "version": "0.4.0",
-  "author": { "name": "Allan Lancioni" },
-  "license": "MIT",
-  "keywords": ["change-management", "spec-driven", "skill"]
-}

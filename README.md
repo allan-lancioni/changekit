@@ -25,7 +25,7 @@ npx github:allan-lancioni/changekit
 Or, without running any code of mine:
 
 ```bash
-npx degit allan-lancioni/changekit/skills/changekit .claude/skills/changekit
+npx degit allan-lancioni/changekit/skill .claude/skills/changekit
 ```
 
 Then open Claude Code in that repository and run `/changekit`. It reads the
@@ -78,24 +78,17 @@ for a system you already built.
 ## What is in the box
 
 ```
-skills/changekit/       what gets copied into your repository
+skill/                  what gets copied into your repository
   SKILL.md              the gate, the routes, and direct work
   references/
     init.md             first run: infer the config, write it, stop
     plan.md             write a package, stop before implementing
-    run.md              drive a whole package, a fresh agent per group
-    work.md             implement one group yourself
+    work.md             implement a task, continue through its group
     review.md           read and report, change nothing
     close.md            audit against behavior, archive
     commit.md           validate, report, wait, commit once per run
   templates/            the package files, and the config file
-evals/                  four cases, measured against a no-skill baseline
-.claude-plugin/         a manifest, so the evals have something to target
 ```
-
-The manifest is not an invitation to install this as a plugin. It exists so
-`claude plugin eval` has a target, because a vendored skill has nothing to
-measure and prose that nobody measures drifts. See [`evals/README.md`](evals/README.md).
 
 About 11k characters of procedure. Only SKILL.md is always loaded, at 2.3k;
 a turn loads between 3k and 6k depending on the route it takes.

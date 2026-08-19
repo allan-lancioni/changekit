@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const { version } = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
-const source = join(root, 'skills', 'changekit');
+const source = join(root, 'skill');
 const target = resolve(process.cwd(), '.claude', 'skills', 'changekit');
 const force = process.argv.includes('--force') || process.argv.includes('-f');
 

@@ -19,6 +19,12 @@ planning ritual for a two line fix. This one classifies first and says
 Copy it into the repository it will govern:
 
 ```bash
+npx github:allan-lancioni/changekit
+```
+
+Or, without running any code of mine:
+
+```bash
 npx degit allan-lancioni/changekit/skill .claude/skills/changekit
 ```
 
@@ -54,7 +60,7 @@ Everything under `.claude/skills/changekit/` is replaceable. Nothing of yours
 belongs in there, which is what makes updating safe:
 
 ```bash
-npx degit --force allan-lancioni/changekit/skill .claude/skills/changekit
+npx github:allan-lancioni/changekit --force
 ```
 
 ## Specs are optional
@@ -69,7 +75,7 @@ for a system you already built.
 ## What is in the box
 
 ```
-skill/
+skill/                  what gets copied into your repository
   SKILL.md              the gate, the routes, and direct work
   references/
     init.md             first run: infer the config, write it, stop

@@ -56,4 +56,4 @@ stop and re-route to `plan.md`.
   language they are writing to you in.
 - Never write a protected path.
 
-<!-- changekit 0.3.0 -->
+<!-- changekit 0.4.0 -->

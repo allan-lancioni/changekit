@@ -1,0 +1,39 @@
+name: evals
+
+# Manual only, on purpose. `claude plugin eval` is in early access, and a
+# workflow that fails on every push until it is enabled teaches people to
+# ignore a red build.
+on:
+  workflow_dispatch:
+    inputs:
+      threshold:
+        description: Fail below this per-case score
+        default: "0.8"
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate the manifest and the skill
+        run: |
+          npx -y @anthropic-ai/claude-code plugin validate .
+          npx -y @anthropic-ai/claude-code plugin validate ./skills
+      - name: Run the eval suite against a no-skill baseline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npx -y @anthropic-ai/claude-code plugin eval . \
+            --ablation with-without \
+            --scaffold \
+            --threshold "${{ inputs.threshold }}" \
+            --json evals/results/latest.json \
+            --no-publish
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results
+          path: evals/results/

@@ -1,12 +1,12 @@
 {
   "name": "changekit",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Change packages for Claude Code. A skill you copy into your repo, not a framework you install.",
   "license": "MIT",
   "author": "Allan Lancioni",
   "type": "module",
   "bin": { "changekit": "bin/install.mjs" },
-  "files": ["skill", "bin"],
+  "files": ["skills", "bin"],
   "repository": { "type": "git", "url": "git+https://github.com/allan-lancioni/changekit.git" },
   "keywords": ["claude-code", "skill", "change-management", "spec-driven"]
 }

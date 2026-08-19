@@ -2,6 +2,7 @@
 
 How change packages work in this repository.
 
+- **changekit:** <version from the marker at the end of SKILL.md>
 - **changes:** changes/
 - **specs:** none
 - **language:** English

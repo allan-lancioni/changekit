@@ -51,10 +51,12 @@ compatibility, observable behavior. It never commits without approval.
 
 ## The one file you own
 
-`.claude/changekit.md` holds where the packages live, whether the project has
-specs, the language for written artifacts, the validation command, and the
-paths nothing may write. It is yours, it sits outside the skill directory,
-and updates never touch it.
+`CHANGEKIT.md`, at the root of your repository, holds where the packages
+live, whether the project has specs, the language for written artifacts, the
+validation command, and the paths nothing may write. It is yours, it sits
+outside the skill directory, and updates never touch it. It reads as plain
+documentation, so a new colleague learns the process from it without
+installing anything.
 
 Everything under `.claude/skills/changekit/` is replaceable. Nothing of yours
 belongs in there, which is what makes updating safe:

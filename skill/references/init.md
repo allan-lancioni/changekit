@@ -1,6 +1,6 @@
 # Init
 
-Write `.claude/changekit.md`, then stop. Do not plan or implement in the same
+Write `CHANGEKIT.md`, then stop. Do not plan or implement in the same
 turn, even if the user asked for both.
 
 ## Infer, do not interrogate
@@ -16,16 +16,20 @@ what you could not find.
 | validate | Test script in `package.json`, `Makefile`, `pyproject.toml`, CI workflow | ask |
 | commit | `git log --oneline -20` | conventional |
 | protect | Real user data, secrets, generated output, a sibling checkout | none |
+| house rules | `CLAUDE.md`, `CONTRIBUTING.md`, the specs themselves | delete the section |
 
 A path may point outside this repository. `../process/changes` is a valid
 changes path and needs no special handling.
 
 ## Write
 
-Copy `templates/changekit.md` to `.claude/changekit.md` and fill it in. Say
-where each value came from, and mark the ones you guessed.
+Copy `templates/changekit.md` to `CHANGEKIT.md`, at the root of the
+repository. Say
+where each value came from, and mark the ones you guessed. Stamp the version
+from the marker at the end of `SKILL.md`.
 
-Create the changes directory, empty.
+Create the changes directory, with a `.gitkeep`, since git does not track an
+empty one.
 
 Present both and wait for approval. Commit them alone, touching nothing else.
 

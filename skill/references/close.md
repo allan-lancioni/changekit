@@ -26,5 +26,12 @@ and what was left for later.
 Present the closure report and wait for approval. Then move the directory to
 `changes/archive/<YYYY-MM-DD>-<slug>/`, dated the day it closed.
 
+## Dropping a package
+
+A package that will not ship is closed too, never left open. Skip the audit,
+write what happened under Outcome, and archive it at the same dated path. Say
+what was built and left behind, and what would have to be true for the work to
+come back.
+
 Load `commit.md`. When closure follows the last task group in the same run,
 the archive move goes in that same commit, not a second one.

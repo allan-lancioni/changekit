@@ -23,7 +23,7 @@ if (!existsSync(source)) {
 if (existsSync(target) && !force) {
   say(`changekit is already installed at .claude/skills/changekit`);
   say(``);
-  say(`  Update it with --force. Your .claude/changekit.md is never touched,`);
+  say(`  Update it with --force. Your CHANGEKIT.md is never touched,`);
   say(`  because it lives outside the skill directory.`);
   process.exit(1);
 }
@@ -38,10 +38,10 @@ if (!existsSync(resolve(process.cwd(), '.git'))) {
   say(`  alongside the project it governs.`);
   say(``);
 }
-say(existsSync(resolve(process.cwd(), '.claude', 'changekit.md'))
+say(existsSync(resolve(process.cwd(), 'CHANGEKIT.md'))
   ? `  Configuration already present. Run /changekit in Claude Code.`
   : `  Now open Claude Code here and run /changekit. It reads the repository,`);
-if (!existsSync(resolve(process.cwd(), '.claude', 'changekit.md'))) {
-  say(`  proposes a configuration and writes .claude/changekit.md. That file`);
+if (!existsSync(resolve(process.cwd(), 'CHANGEKIT.md'))) {
+  say(`  proposes a configuration and writes CHANGEKIT.md. That file`);
   say(`  is yours; everything under the skill directory is replaced on update.`);
 }

@@ -11,11 +11,14 @@ A change package is one unit of planned work. It lives in
 
 ## Read the project file first
 
-Read `.claude/changekit.md`. It sets the changes path, whether this project
-has specs, the language for written artifacts, the validation command, and
-the paths you must never write.
+Read `CHANGEKIT.md`, at the root of the repository. It sets the changes path,
+whether this project
+has specs, the language for written artifacts, the validation command,
+and the paths you must never write.
 
 If it does not exist, load `references/init.md` and do nothing else this turn.
+If the version it records is behind the marker at the end of this file, say so
+in one line before continuing, so the project can refresh it.
 
 ## Classify before you edit
 
@@ -52,4 +55,4 @@ stop and re-route to `plan.md`.
   language they are writing to you in.
 - Never write a protected path.
 
-<!-- changekit 0.1.0 -->
+<!-- changekit 0.2.0 -->

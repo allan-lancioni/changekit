@@ -13,7 +13,8 @@ Produce a package and stop. Never implement in the same turn.
 
 Create `changes/active/<slug>/`, kebab-case, named for the outcome and not
 for the component. Copy each one from `templates/`, same name, and create only the files the
-work needs.
+work needs. A template is a floor: add a section when it carries something
+the work needs said, never to fill the page.
 
 | File | When | Holds |
 |---|---|---|
@@ -29,7 +30,8 @@ write it into an active spec before closure.
 ## Decision gates
 
 List every open decision about domain, schema, persistence, compatibility,
-authorization or observable behavior. Give each one its alternatives and
+authorization or observable behavior. They go in `proposal.md`, under Open
+decisions. A task group that waits on one says so in its `Status`. Give each one its alternatives and
 their consequences. A package with an unanswered gate is not approvable, so
 either get the answer now and record it, or write it down as blocking.
 

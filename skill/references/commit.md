@@ -13,6 +13,9 @@ Run the project's validation command. Add, in proportion to what changed:
 - a search for TODOs, scaffolds, open decisions and references to anything
   you removed.
 
+If a check cannot run at all, say which one and why. Never present a check
+that did not run as a check that passed.
+
 ## Report, then wait
 
 Present, covering the whole run:

@@ -1,7 +1,8 @@
 # Work
 
 Implement one task, then keep going through its group on your own, one
-coherent iteration at a time.
+coherent iteration at a time. To drive a whole multi-group package instead of
+working one group by hand, use `run.md`.
 
 ## Resolve the item
 

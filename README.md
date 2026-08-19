@@ -42,6 +42,7 @@ Everything runs through `/changekit`, in plain language:
 |---|---|
 | "plan the multi tenant migration" | Classifies. If it is too big for one pass, writes the package and stops for approval |
 | "start task 2" | Implements it, then keeps going through its group, checking items as they validate |
+| "run the whole change" | Dispatches a fresh agent per group, validates each one itself, commits group by group |
 | "review this" | Reads and reports, ordered by impact, and changes nothing |
 | "close it" | Audits the criteria against real behavior, archives with a date |
 | "rename this variable" | Tells you it does not need a package, and does it |

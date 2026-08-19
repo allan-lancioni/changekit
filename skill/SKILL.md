@@ -26,7 +26,8 @@ in one line before continuing, so the project can refresh it.
 |---|---|
 | Lands in one coherent pass, no unapproved decision in the way | Direct, below |
 | Larger, ambiguous, staged, migratory, or crossing contexts | `references/plan.md` |
-| Continuing an approved package | `references/work.md` |
+| Running a package group by group, dispatching each | `references/run.md` |
+| Implementing one group yourself | `references/work.md` |
 | Looking without changing | `references/review.md` |
 | Every task checked and validated | `references/close.md` |
 
@@ -55,4 +56,4 @@ stop and re-route to `plan.md`.
   language they are writing to you in.
 - Never write a protected path.
 
-<!-- changekit 0.2.0 -->
+<!-- changekit 0.3.0 -->

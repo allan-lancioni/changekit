@@ -31,7 +31,8 @@ from the marker at the end of `SKILL.md`.
 Create the changes directory, with a `.gitkeep`, since git does not track an
 empty one.
 
-Present both and wait for approval. Commit them alone, touching nothing else.
+Present both and wait for approval of the values, since that file is the one
+the project owns. Then commit them alone, touching nothing else.
 
 ## Say what happens next
 

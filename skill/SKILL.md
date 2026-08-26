@@ -35,6 +35,11 @@ Do not open a package because the work touches behavior. Open one because a
 single pass cannot land it. If direct work runs into an unapproved decision,
 stop and re-route to `plan.md`.
 
+Confirm before opening one. Ask with AskUserQuestion, offering the package and
+the direct pass, and write nothing until the answer is in. Skip the question
+only when the user asked for a package in so many words. `plan.md` carries the
+form.
+
 ## Direct work
 
 1. Name the intended behavior before editing.
@@ -54,6 +59,9 @@ stop and re-route to `plan.md`.
   in the package, then continue.
 - Write repository artifacts in the project language. Answer the user in the
   language they are writing to you in.
+- Commit at each commit point without asking: the package when it opens, each
+  task group as it lands, the archive move at closure. `commit.md` carries the
+  exceptions.
 - Never write a protected path.
 
-<!-- changekit 0.3.0 -->
+<!-- changekit 0.4.0 -->

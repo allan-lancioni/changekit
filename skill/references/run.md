@@ -9,9 +9,18 @@ package has one group, use `work.md` instead.
 
 ## Before the first group
 
-Read the package. Ask once whether to stop at each commit or run through to the
-end. Whatever the answer, you stop unconditionally when a group comes back
-blocked and when a validation fails.
+Read the package and summarise it in a few lines: the goal, the groups with
+their status, and the one that runs first. Say what is left to do, not how the
+procedure works.
+
+Then ask with AskUserQuestion, a single question, three options:
+
+- stop after each group, so the user validates before the next one starts;
+- run to the end;
+- cancel, and do nothing.
+
+Whatever the answer, you stop unconditionally when a group comes back blocked
+and when a validation fails.
 
 ## Dispatch a group
 
@@ -55,7 +64,9 @@ has to survive every group.
 2. Read the diff. Confirm it touched only what the group owns.
 3. Check the items and set the group's `Status` to `completed`. You are the
    only writer of `tasks.md`.
-4. Commit that group alone, then start the next one.
+4. Show the group's items as a table, one row per item with what proved it.
+5. Commit that group alone, without asking. Start the next group when the user
+   chose to run to the end; otherwise stop and hand it over.
 
 Stop and bring it to the user when a group returns blocked, when your own
 validation fails, or when the diff leaves the group's scope. Mark nothing and

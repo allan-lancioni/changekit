@@ -2,6 +2,19 @@
 
 Produce a package and stop. Never implement in the same turn.
 
+## Confirm first
+
+Unless the user asked for a package in so many words, ask before writing one.
+Use AskUserQuestion, a single question stating what you classified and why,
+with three options:
+
+- open the package, naming what it would cover;
+- do it directly in one pass, naming what that leaves unresolved;
+- neither: stop here.
+
+Write nothing until the answer is in. When the answer is the direct pass, go
+back to `SKILL.md` and take that route.
+
 ## Before writing
 
 1. State the problem and the behavior observable today.
@@ -43,4 +56,6 @@ either get the answer now and record it, or write it down as blocking.
 - End with cleanup and closure.
 - Do not write tasks that restate this procedure.
 
-Present the package as a whole. Wait for approval. Stop.
+Present the package as a whole, then load `commit.md`: opening it is a commit
+point, and it lands without asking. Stop there. Do not implement, and do not
+ask to.

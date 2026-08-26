@@ -40,21 +40,29 @@ Everything runs through `/changekit`, in plain language:
 
 | You say | It does |
 |---|---|
-| "plan the multi tenant migration" | Classifies. If it is too big for one pass, writes the package and stops for approval |
-| "start task 2" | Implements it, then keeps going through its group, checking items as they validate |
+| "plan the multi tenant migration" | Classifies. If it is too big for one pass, asks before opening the package, writes it, commits it, and stops |
+| "start task 2" | Summarises what is left, asks how far to run, then implements and checks items as they validate |
 | "run the whole change" | Dispatches a fresh agent per group, validates each one itself, commits group by group |
 | "review this" | Reads and reports, ordered by impact, and changes nothing |
 | "close it" | Audits the criteria against real behavior, archives with a date |
 | "rename this variable" | Tells you it does not need a package, and does it |
 
 It stops on its own when a decision needs you: schema, persistence,
-compatibility, observable behavior. It never commits without approval.
+compatibility, observable behavior. Everything else runs without a checkpoint.
+It commits at three moments, the package when it opens, each group as it lands,
+and the archive move at closure, and reports what it did instead of asking
+whether it may.
+
+There are two questions it always asks, both as one prompt with the options in
+front of you: whether to open a package at all, and, once one is open, whether
+to stop after each group or run to the end.
 
 ## The one file you own
 
 `CHANGEKIT.md`, at the root of your repository, holds where the packages
 live, whether the project has specs, the language for written artifacts, the
-validation command, and the paths nothing may write. It is yours, it sits
+validation command, whether commits land on their own, and the paths nothing
+may write. It is yours, it sits
 outside the skill directory, and updates never touch it. It reads as plain
 documentation, so a new colleague learns the process from it without
 installing anything.
@@ -90,8 +98,8 @@ skill/                  what gets copied into your repository
   templates/            the package files, and the config file
 ```
 
-About 11k characters of procedure. Only SKILL.md is always loaded, at 2.3k;
-a turn loads between 3k and 6k depending on the route it takes.
+About 18k characters of procedure. Only SKILL.md is always loaded, at 3k;
+a turn loads between 4k and 8k depending on the route it takes.
 There is nothing to run: no scripts, no dependencies, no state outside your
 repository.
 

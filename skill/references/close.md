@@ -23,8 +23,9 @@ Close a package only when every task is checked and every dependency is done.
 Record the outcome in `proposal.md`: what shipped, what changed on the way,
 and what was left for later.
 
-Present the closure report and wait for approval. Then move the directory to
-`changes/archive/<YYYY-MM-DD>-<slug>/`, dated the day it closed.
+Present the closure report, then move the directory to
+`changes/archive/<YYYY-MM-DD>-<slug>/`, dated the day it closed. Closure is a
+commit point: it lands without asking, like the others.
 
 ## Dropping a package
 

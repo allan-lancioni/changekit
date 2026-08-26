@@ -4,6 +4,20 @@ Implement one task, then keep going through its group on your own, one
 coherent iteration at a time. To drive a whole multi-group package instead of
 working one group by hand, use `run.md`.
 
+## Before the first task
+
+Read the package and summarise it in a few lines: the goal, the groups with
+their status, and the one you are about to start. Say what is left to do, not
+how the procedure works.
+
+Then ask with AskUserQuestion, a single question, three options:
+
+- stop after each group, so the user validates before the next one starts;
+- run to the end, stopping only on the conditions below;
+- cancel, and do nothing.
+
+Ask once, before the first task. Do not ask again between groups.
+
 ## Resolve the item
 
 1. Read the package: proposal, tasks, and design or delta where they exist.
@@ -35,16 +49,19 @@ then resume.
 The moment an item's own implementation and validation pass, check it in
 `tasks.md`. Do not wait for the commit. Then start the next task in the group
 without asking. When the last item of a group is checked, set the group's
-`Status` to `completed`.
+`Status` to `completed` and load `commit.md`, which reports the group as a
+table and commits it.
 
-Stop the run, leaving completed tasks checked and uncommitted, when any of
-these is true:
+Stop the run, leaving completed tasks checked, when any of these is true:
 
-- the group has no task left;
+- the group is done and the user chose to stop after each group;
+- the package has no group left;
 - the next task is not approved, or implementing it exposes an open decision;
 - implementation or validation failed;
 - another agent's work now blocks the path;
 - the user asked to stop or to review first.
+
+When none of them is true, start the next group without asking.
 
 Never leave a task checked while its own work is incomplete. A stop in the
 middle of a task leaves that task unchecked.

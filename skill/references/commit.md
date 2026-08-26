@@ -3,6 +3,14 @@
 Every route that changed a file ends here. For a package, "this run" is every
 task checked since the last commit, not only the last one.
 
+## When
+
+Three moments commit, and each one commits alone:
+
+- the package, when it opens;
+- a task group, as it lands;
+- the archive move, at closure.
+
 ## Validate
 
 Run the project's validation command. Add, in proportion to what changed:
@@ -16,10 +24,12 @@ Run the project's validation command. Add, in proportion to what changed:
 If a check cannot run at all, say which one and why. Never present a check
 that did not run as a check that passed.
 
-## Report, then wait
+## Report
 
 Present, covering the whole run:
 
+- where the run completed a task group, its items as a table, one row per
+  item with what proved it;
 - what behaves differently now;
 - the files that changed;
 - decisions approved along the way;
@@ -28,9 +38,12 @@ Present, covering the whole run:
 - unrelated work still sitting in the tree;
 - why the run stopped here.
 
-Wait for explicit approval. Do not commit without it.
-
 ## Commit
+
+Commit without asking. The report is the record, not a request for permission.
+Ask first only when the user said to in this conversation, when `CHANGEKIT.md`
+says to, when a check failed or could not run, or when the tree holds work that
+is not yours and partial staging cannot separate it.
 
 1. Stage only this run's paths. Use partial staging when a file holds
    someone else's work too.
@@ -38,4 +51,5 @@ Wait for explicit approval. Do not commit without it.
 3. One commit for the run, in the project's convention and language.
 4. Report the hash and what is left in the tree.
 
-Do not start the next task after committing.
+Start the next group after committing only when the user chose to run to the
+end. Otherwise stop here.

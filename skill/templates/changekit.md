@@ -11,6 +11,8 @@ How change packages work in this repository.
 - **commit:** conventional, one per commit point, without asking. Write
   "ask first" here instead to be asked every time.
 - **protect:** <paths this skill must never write, or delete this line>
+- **updates:** ask at closure. Write "off" here to never check, or
+  "hold <version>" to skip one.
 
 ## House rules
 

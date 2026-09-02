@@ -31,6 +31,7 @@ in one line before continuing, so the project can refresh it.
 | Implementing one group yourself | `references/work.md` |
 | Looking without changing | `references/review.md` |
 | Every task checked and validated | `references/close.md` |
+| Updating the skill itself | `references/update.md` |
 
 Do not open a package because the work touches behavior. Open one because a
 single pass cannot land it. If direct work runs into an unapproved decision,
@@ -68,4 +69,4 @@ form.
   exceptions.
 - Never write a protected path.
 
-<!-- changekit 0.4.2 -->
+<!-- changekit 0.5.0 -->

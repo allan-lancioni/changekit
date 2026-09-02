@@ -45,6 +45,7 @@ Everything runs through `/changekit`, in plain language:
 | "run the whole change" | Dispatches a fresh agent per group, validates each one itself, commits group by group |
 | "review this" | Reads and reports, ordered by impact, and changes nothing |
 | "close it" | Audits the criteria against real behavior, archives with a date |
+| "update changekit" | Reads the changelog between your version and the latest, says what it costs, then replaces the skill |
 | "rename this variable" | Tells you it does not need a package, and does it |
 
 It stops on its own when a decision needs you: schema, persistence,
@@ -74,6 +75,13 @@ belongs in there, which is what makes updating safe:
 npx github:allan-lancioni/changekit --force
 ```
 
+You rarely have to remember that. When a package closes, and only then, the
+skill compares itself against the latest release and offers to update. It asks
+about a version once: decline it and it is recorded as a hold, so the question
+comes back only when something newer ships. `updates: off` in your config stops
+the check, and the network call with it. Nothing is checked while a package is
+open, because a package planned under one procedure keeps it until it closes.
+
 ## Specs are optional
 
 If your repository keeps normative behavior documents, point the config at
@@ -91,17 +99,20 @@ skill/                  what gets copied into your repository
   references/
     init.md             first run: infer the config, write it, stop
     plan.md             write a package, stop before implementing
+    run.md              dispatch a group at a time, validate each one
     work.md             implement a task, continue through its group
     review.md           read and report, change nothing
     close.md            audit against behavior, archive
     commit.md           validate, report, wait, commit once per run
+    update.md           offer the new version, say what it costs, replace
   templates/            the package files, and the config file
 ```
 
-About 18k characters of procedure. Only SKILL.md is always loaded, at 3k;
-a turn loads between 4k and 8k depending on the route it takes.
-There is nothing to run: no scripts, no dependencies, no state outside your
-repository.
+About 24k characters of procedure. Only SKILL.md is always loaded, at 3k;
+a turn loads between 4k and 10k depending on the route it takes.
+There is still nothing to run: no scripts, no dependencies, no state outside
+your repository. The update check is one `git ls-remote`, run at one moment,
+and what it remembers is a line in the file you own.
 
 ## License
 

@@ -16,6 +16,7 @@ what you could not find.
 | validate | Test script in `package.json`, `Makefile`, `pyproject.toml`, CI workflow | ask |
 | commit | `git log --oneline -20` | conventional |
 | protect | Real user data, secrets, generated output, a sibling checkout | none |
+| updates | Nothing to look for. Keep the default | ask at closure |
 | house rules | `CLAUDE.md`, `CONTRIBUTING.md`, the specs themselves | delete the section |
 
 A path may point outside this repository. `../process/changes` is a valid

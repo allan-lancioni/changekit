@@ -16,7 +16,8 @@ whether this project
 has specs, the language for written artifacts, the validation command,
 and the paths you must never write.
 
-If it does not exist, load `references/init.md` and do nothing else this turn.
+If it does not exist, load `references/init.md` and follow it. Do not plan
+or implement in the same turn.
 If the version it records is behind the marker at the end of this file, say so
 in one line before continuing, so the project can refresh it.
 
@@ -64,4 +65,4 @@ form.
   exceptions.
 - Never write a protected path.
 
-<!-- changekit 0.4.0 -->
+<!-- changekit 0.4.1 -->

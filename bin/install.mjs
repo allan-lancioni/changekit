@@ -4,6 +4,7 @@
 // on its first run.
 
 import { cpSync, existsSync, readFileSync, mkdirSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -14,6 +15,12 @@ const target = resolve(process.cwd(), '.claude', 'skills', 'changekit');
 const force = process.argv.includes('--force') || process.argv.includes('-f');
 
 const say = (m) => process.stdout.write(m + '\n');
+
+const onPath = (bin) => {
+  const probe = process.platform === 'win32' ? `where ${bin}` : `command -v ${bin}`;
+  const { status } = spawnSync(probe, { stdio: 'ignore', shell: true });
+  return status === 0;
+};
 
 if (!existsSync(source)) {
   say(`changekit: cannot find the skill at ${source}`);
@@ -33,15 +40,30 @@ cpSync(source, target, { recursive: true });
 
 say(`changekit ${version} installed at .claude/skills/changekit`);
 say(``);
+
 if (!existsSync(resolve(process.cwd(), '.git'))) {
   say(`  This is not a git repository. changekit expects to be committed`);
   say(`  alongside the project it governs.`);
   say(``);
 }
-say(existsSync(resolve(process.cwd(), 'CHANGEKIT.md'))
-  ? `  Configuration already present. Run /changekit in Claude Code.`
-  : `  Now open Claude Code here and run /changekit. It reads the repository,`);
-if (!existsSync(resolve(process.cwd(), 'CHANGEKIT.md'))) {
-  say(`  proposes a configuration and writes CHANGEKIT.md. That file`);
-  say(`  is yours; everything under the skill directory is replaced on update.`);
+
+if (!onPath('claude')) {
+  say(`  Claude Code is not on your PATH. Install it first:`);
+  say(``);
+  say(`    npm install -g @anthropic-ai/claude-code`);
+  say(``);
+}
+
+if (existsSync(resolve(process.cwd(), 'CHANGEKIT.md'))) {
+  say(`  Configuration already present. Open Claude Code here:`);
+  say(``);
+  say(`    claude "/changekit"`);
+} else {
+  say(`  Now configure it. Paste this:`);
+  say(``);
+  say(`    claude "/changekit"`);
+  say(``);
+  say(`  It reads the repository, proposes a configuration and writes`);
+  say(`  CHANGEKIT.md. That file is yours; everything under the skill`);
+  say(`  directory is replaced wholesale on update.`);
 }

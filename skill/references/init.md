@@ -40,3 +40,7 @@ State in one line that planning, implementing, reviewing and closing all run
 through `/changekit`, and that the file you just wrote is the only one the
 project owns: everything else under `.claude/skills/changekit/` is replaced
 wholesale on update.
+
+If the same message asked for something else, name it and say it runs next,
+once the configuration is approved. Do not do it now, and do not make the
+user type it again.

@@ -12,7 +12,7 @@ what you could not find.
 |---|---|---|
 | changes | An existing directory of change packages, proposals or RFCs | `changes/` |
 | specs | A directory of normative behavior documents: `specs/`, `docs/specs/`, `.kiro/specs/` | none |
-| language | The language of the README and the existing documents | English |
+| language | English, unless the README and the documents are not: then ask | English |
 | validate | Test script in `package.json`, `Makefile`, `pyproject.toml`, CI workflow | ask |
 | commit | `git log --oneline -20` | conventional |
 | protect | Real user data, secrets, generated output, a sibling checkout | none |
@@ -24,9 +24,10 @@ changes path and needs no special handling.
 ## Write
 
 Copy `templates/changekit.md` to `CHANGEKIT.md`, at the root of the
-repository. Say
-where each value came from, and mark the ones you guessed. Stamp the version
-from the marker at the end of `SKILL.md`.
+repository, and write it in the language you settled on, keeping the field
+keys in English: they are what this skill reads back. Say where each value
+came from, and mark the ones you guessed. Stamp the version from the marker
+at the end of `SKILL.md`.
 
 Create the changes directory, with a `.gitkeep`, since git does not track an
 empty one.

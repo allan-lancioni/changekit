@@ -58,11 +58,14 @@ form.
   schema, persistence, compatibility, authorization or observable behavior.
   Present the alternatives and their consequences, get an answer, record it
   in the package, then continue.
-- Write repository artifacts in the project language. Answer the user in the
-  language they are writing to you in.
+- Write in the language `CHANGEKIT.md` records: the package files, their
+  slugs, that file itself, the commit messages. Answer the user in the
+  language of their message, English when it carries no signal. The two are
+  independent and often differ. Code follows the conventions around it and
+  not this field, and an existing document follows its own language.
 - Commit at each commit point without asking: the package when it opens, each
   task group as it lands, the archive move at closure. `commit.md` carries the
   exceptions.
 - Never write a protected path.
 
-<!-- changekit 0.4.1 -->
+<!-- changekit 0.4.2 -->

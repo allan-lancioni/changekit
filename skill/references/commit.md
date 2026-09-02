@@ -48,7 +48,7 @@ is not yours and partial staging cannot separate it.
 1. Stage only this run's paths. Use partial staging when a file holds
    someone else's work too.
 2. Read the staged diff before committing.
-3. One commit for the run, in the project's convention and language.
+3. One commit for the run, in the project's convention.
 4. Report the hash and what is left in the tree.
 
 Start the next group after committing only when the user chose to run to the
